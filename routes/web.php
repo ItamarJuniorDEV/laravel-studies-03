@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',function(){
+Route::get('/', function () {
     echo 'Blade Layouts';
 });
+
+Route::view('/home', 'home');
+Route::view('/other', 'other');
