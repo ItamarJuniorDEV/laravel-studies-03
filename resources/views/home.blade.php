@@ -1,16 +1,11 @@
 @extends('layouts.main_layout')
 @section('content')
 
-<h3>Este texto faz parte da view</h3>
+<div class="text-center">
+  @foreach ($pessoas_linguas as $pessoa => $linguas)
 
-{{-- renderizar o component --}}
-<x-my-component message="Mensagem aqui" />
+  <x-card-pessoa :nome-pessoa="$pessoa" :linguas-pessoa="$linguas" />
 
-{{-- renderizar o component que existe dentro da subpasta --}}
-<x-admin.admin-card :name="$myName" teste="Olá mundo" />
-
-<h3>Este texto faz parte da view</h3>
-
-<p>{{ $myName }}</p>
-
+  @endforeach
+</div>
 @endsection
